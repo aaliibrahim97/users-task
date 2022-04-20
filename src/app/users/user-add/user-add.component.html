@@ -1,0 +1,48 @@
+<div class="modal-content">
+    <div class="modal-header">
+        <h4 class="modal-title f-20">
+            Create New User
+        </h4>
+    </div>
+    <div class="modal-body">
+        <form #f="ngForm" (ngSubmit)="createUser(f)">
+            <div class="form-group row">
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Name</mat-label>
+                        <input matInput name="name" #name="ngModel" ngModel type="text" placeholder="Name" required>
+                        <p *ngIf="name.errors?.required && name.touched" class="red">
+                            Please Enter Your Full Name
+                        </p>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Email</mat-label>
+                        <input matInput name="email" #email="ngModel" ngModel type="email" placeholder="E-Mail"
+                            required>
+                        <p *ngIf="email.errors?.required && email.touched" class="red">
+                            Please Enter Your Email-Address
+                        </p>
+                        <p *ngIf="email.errors?.email && email.touched" class="red">
+                            Please Enter A Vaild Email-Address
+                        </p>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <mat-form-field appearance="fill">
+                        <mat-label>Location</mat-label>
+                        <input matInput name="Location" #Location="ngModel" ngModel type="text" placeholder="Location"
+                            required>
+                        <p *ngIf="Location.errors?.required && Location.touched" class="red">
+                            Please Enter Your Location
+                        </p>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-4">
+                    <button mat-raised-button color="primary" type="submit" [disabled]="f.invalid">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

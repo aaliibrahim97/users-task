@@ -1,0 +1,21 @@
+.menu-spacer {
+    flex: 1 1 auto;
+}
+.l-btn {
+    cursor: pointer;
+    transition: .5s color ease-in-out;
+}
+.l-btn:hover {
+    color: rgb(135, 186, 231);
+    transition: .5s color ease-in-out;
+}
+.m-l-auto {
+    margin-left: auto;
+}
+.avatar {
+    background-color: blueviolet;
+    font-weight: bold;
+    border-radius: 100%;
+    min-width: 40px;
+    line-height: 40px;
+}

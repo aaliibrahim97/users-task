@@ -1,0 +1,23 @@
+table {
+    width: 100%;
+}
+.mg-20 {
+    margin: 20px;
+}
+span {
+    cursor: pointer;
+    transition: .3s color ease-in-out;
+}
+span:hover {
+    color: gray;
+    transition: .3s color ease-in-out;
+}
+.mg-5-20 {
+    margin: 5px 20px;
+}
+.pd-l-20 {
+    padding-left: 20px;
+}
+.m-auto {
+    margin: auto;
+}

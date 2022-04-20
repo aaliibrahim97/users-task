@@ -1,0 +1,30 @@
+<div style="height: 10vh;">
+    <mat-toolbar color="primary">
+      <mat-toolbar-row>
+        <span>Users</span>
+
+        <button mat-button [matMenuTriggerFor]="menu" class="m-l-auto avatar">
+          {{userName | slice:0:1 | uppercase}}
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item class="text-center" disabled>
+            {{userName}}
+          </button>
+          <button mat-menu-item class="text-center" disabled>
+            {{userEmail}}
+          </button>
+          <button mat-menu-item (click)="logOut()" class="text-center">
+            <span class="material-icons">
+              logout
+            </span>
+          </button>
+        </mat-menu>
+
+        <!-- <span class="menu-spacer d-flex flex-row-reverse l-btn" (click)="logOut()">
+          <span class="material-icons">
+            logout
+          </span>
+        </span> -->
+      </mat-toolbar-row>
+    </mat-toolbar>
+</div>

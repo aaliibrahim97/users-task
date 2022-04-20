@@ -1,0 +1,45 @@
+<div class="background">
+  <div class="container">
+    <div class="row justify-content-center pad">
+      <mat-card class="col-lg-6">
+
+        <mat-card-title class="text-center">Login</mat-card-title>
+        <mat-card-content class="justify-content-center">
+          <form class="justify-content-center" #f="ngForm" (ngSubmit)="logIn(f)">
+            <p>
+              <mat-form-field class="col-12">
+                <input ngModel name="email" #email="ngModel" type="email" matInput placeholder="E-Mail" required email>
+                <p *ngIf="email.errors?.required && email.touched" class="red">
+                  Please Enter Your Email-Address
+                </p>
+                <p *ngIf="email.errors?.email && email.touched" class="red">
+                  Please Enter A Vaild Email-Address
+                </p>
+              </mat-form-field>
+            </p>
+
+            <p>
+              <mat-form-field class="col-12">
+                <input ngModel name="password" #password="ngModel" type="password" matInput placeholder='Password'
+                  required>
+                <p *ngIf="password.errors?.required && password.touched" class="red">
+                  Please Enter Your Password
+                </p>
+              </mat-form-field>
+            </p>
+
+            <div class="d-flex justify-content-center">
+              <button type="submit" color="primary" class="pad-2" mat-raised-button [disabled]="f.invalid">
+                <span *ngIf="loading == false">Submit</span>
+                <mat-spinner [diameter]="30" color="accent" *ngIf="loading == true"></mat-spinner>
+              </button>
+            </div>
+            <h4 class="text-center pt-4">
+              <a routerLink="/signup">Don't Have an Account</a>
+            </h4>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

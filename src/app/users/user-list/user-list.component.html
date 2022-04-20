@@ -1,0 +1,71 @@
+<button mat-raised-button color="warn" class="mg-5-20" (click)="openCreate()">Create New User</button>
+
+<div class="mat-elevation-z8 mg-20">
+
+  <div class="example-header pd-l-20">
+    <mat-form-field>
+      <input matInput [(ngModel)]="filterValue" (keyup)="applyFilter()" placeholder="Filter">
+    </mat-form-field>
+  </div>
+
+  <mat-spinner class="m-auto" *ngIf="loading == true"></mat-spinner>
+
+  <table mat-table matSort [dataSource]="dataSource">
+
+
+    <ng-container matColumnDef="id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> # </th>
+      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="name">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="email">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
+      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+    </ng-container>
+
+
+    <ng-container matColumnDef="location">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Location </th>
+      <td mat-cell *matCellDef="let element"> {{element.location}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="picture">
+      <th mat-header-cell *matHeaderCellDef> Picture </th>
+      <td mat-cell *matCellDef="let element">
+        <img [src]="element.profilepicture" width="30">
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="edit">
+      <th mat-header-cell *matHeaderCellDef> Edit </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="material-icons" (click)="openEdit(element)">
+          edit
+        </span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="delete">
+      <th mat-header-cell *matHeaderCellDef> Delete </th>
+      <td mat-cell *matCellDef="let element">
+        <span class="material-icons" (click)="openDelete(element)">
+          delete
+        </span>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [length]="total_pages" [pageSize]="10" [pageSizeOptions]="[10]" (page)="onChangePage($event)"
+    aria-label="Select page">
+  </mat-paginator>
+
+</div>

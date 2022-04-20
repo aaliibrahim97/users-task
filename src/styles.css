@@ -1,0 +1,30 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+a {
+    text-decoration: none !important;
+}
+.alert-danger,
+.alert-success {
+    text-transform:capitalize;
+    text-align: center !important;
+}
+.alert-success {
+    color: #155724 !important;
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+  
+.alert-danger {
+    color: #721c24 !important;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+}
+.mat-progress-spinner.mat-accent circle, .mat-spinner.mat-accent circle {
+    stroke: #ffffff !important;
+}
+
+.red {
+    color: #f44336;
+}
